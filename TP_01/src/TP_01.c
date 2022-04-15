@@ -11,13 +11,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "funciones.h"
+#include "menuPrincipalYCalculos.h"
 
 
 int main()
 {
 	setbuf(stdout, NULL);
-	int cant;
 	int	flagKm = 0;
 	int	flagPrecioVuelos = 0;
 	int flagCalculos = 0;
@@ -45,27 +44,8 @@ int main()
 			case 2:
 				if(flagKm == 1)
 				{
-					printf("Ingrese el precio de Aerolineas Argentinas: \n");
-				    fflush(stdin);
-				    cant = scanf("%f", &precioAA);
-				    while(cant == 0 || precioAA < 0)
-				    {
-				        printf("ATENCION! El valor ingresado es incorrecto\n\n");
-				        printf("Ingrese el precio de Aerolineas Argentinas: \n");
-				        fflush(stdin);
-				        cant = scanf("%f", &precioAA);
-				    }
-
-				    printf("Ingrese el precio de Latam: \n");
-				    fflush(stdin);
-				    cant = scanf("%f", &precioLatam);
-				    while(cant == 0 || precioLatam < 0)
-				    {
-				        printf("ATENCION! El valor ingresado es incorrecto\n\n");
-				        printf("Ingrese el precio de Latam: \n");
-				        fflush(stdin);
-				        cant = scanf("%f", &precioLatam);
-				    }
+					precioAA = ingresoPrecioVuelos("Ingrese el precio de Aerolineas Argentinas: \n", "ATENCION! El valor ingresado es incorrecto\n\n" );
+					precioLatam = ingresoPrecioVuelos("Ingrese el precio de Latam: \n", "ATENCION! El valor ingresado es incorrecto\n\n" );
 
 				    printf("precio Aerolineas Argentinas: $%.2f\n", precioAA);
 				    printf("precio Latam: $%.2f\n", precioLatam);

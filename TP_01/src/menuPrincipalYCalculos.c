@@ -7,10 +7,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "funciones.h"
+#include "menuPrincipalYCalculos.h"
 
-int menuPrincipal()
-{
+int menuPrincipal() {
 	int opcion;
 	int cant;
 
@@ -24,19 +23,36 @@ int menuPrincipal()
 	printf("seleccione la opcion deseada: \n");
 	fflush(stdin);
 	cant = scanf("%d", &opcion);
-	if(cant == 0)
-	{
+	if (cant == 0) {
 		opcion = 7;
 	}
 
 	return opcion;
 }
 
+int ingresoPrecioVuelos(char *mensaje, char *mensajeError) {
+	float cant;
+	int input;
 
-void informeDeResultados(float precioLatam, float precioAA, float precioDebitoLatam, float precioDebitoAA, float precioCreditoLatam,
-					float precioCreditoAA, float precioBtcLatam, float precioBtcAA, float precioUnitarioLatam,
-					float precioUnitarioAA, float diferencia, float kms)
-{
+	printf("%s", mensaje);
+	fflush(stdin);
+	input = scanf("%f", &cant);
+	while (input == 0 || cant < 0) {
+		printf("%s", mensajeError);
+		printf("%s", mensaje);
+		fflush(stdin);
+		input = scanf("%f", &cant);
+	}
+
+	return cant;
+
+}
+
+void informeDeResultados(float precioLatam, float precioAA,
+		float precioDebitoLatam, float precioDebitoAA, float precioCreditoLatam,
+		float precioCreditoAA, float precioBtcLatam, float precioBtcAA,
+		float precioUnitarioLatam, float precioUnitarioAA, float diferencia,
+		float kms) {
 	printf("KMs Ingresados: %.2f km \n\n", kms);
 	printf("Precio Aerolineas: $ %.2f \n", precioAA);
 	printf("a) Precio con tarjeta de debito: $ %.2f \n", precioDebitoAA);
@@ -51,17 +67,14 @@ void informeDeResultados(float precioLatam, float precioAA, float precioDebitoLa
 	printf("La diferencia de precio es: $ %.2f \n\n", diferencia);
 }
 
-float ingresoDeKm()
-{
+float ingresoDeKm() {
 	float km;
 	int cant;
-
 
 	printf("Ingrese los kilometros del vuelo: \n");
 	fflush(stdin);
 	cant = scanf("%f", &km);
-	while(km <= 0 || cant == 0)
-	{
+	while (km <= 0 || cant == 0) {
 		printf("ERROR! ingresar nuevamente los kilometros: \n");
 		fflush(stdin);
 		cant = scanf("%f", &km);
@@ -74,33 +87,30 @@ void informarNoEsNumero()
     printf("La opcion elegida no es un numero. Elija uno de los numeros del menu.\n");
 }
 
-float pagoConDebito(float precio)
-{
+float pagoConDebito(float precio) {
 	float precioDebito;
-	precioDebito = precio - (precio*10/100);
+	precioDebito = precio - (precio * 10 / 100);
 	return precioDebito;
 }
 
-float pagoConCredito(float precio)
-{
+float pagoConCredito(float precio) {
 	float precioCredito;
-	precioCredito = precio + (precio*25/100);
+	precioCredito = precio + (precio * 25 / 100);
 	return precioCredito;
 }
 
-float pagoConBtc(float precio)
-{
+float pagoConBtc(float precio) {
 	float precioBtc;
 	precioBtc = precio / 4647510.50;
 	return precioBtc;
 }
 
-float precioXKm(float precio, float km)
-{
+float precioXKm(float precio, float km) {
 	float precioUnitario;
-	precioUnitario = precio/km;
+	precioUnitario = precio / km;
 	return precioUnitario;
 }
+
 
 
 

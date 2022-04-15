@@ -1,5 +1,5 @@
 /*
- * funciones.h
+ * menuPrincipalYCalculos.h
  *
  *  Created on: 12 abr. 2022
  *      Author: W. Neira
@@ -18,7 +18,8 @@
 int menuPrincipal();
 
 /// @brief Informa los resultados segun la opcion de pago elegida.
-void informeDeResultados(float, float, float, float, float, float, float, float, float, float, float, float);
+void informeDeResultados(float, float, float, float, float, float, float, float,
+		float, float, float, float);
 
 /// @brief Imprime el mensaje informando que la opcion elegida no es del tipo int
 void informarNoEsNumero();
@@ -57,4 +58,9 @@ float pagoConBtc(float);
 /// @param Kms totales
 /// @return retorna el valor del precion x km
 float precioXKm(float, float);
-
+/// @brief Guarda los valores de los precios de cada aerolinea
+///
+/// @param mensaje para ingreso de precio
+/// @param mensaje de error por valor ingresado incorrecto
+/// @return el precio del vuelo
+int ingresoPrecioVuelos(char*, char*);
