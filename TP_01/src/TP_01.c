@@ -1,7 +1,7 @@
 /*
  ============================================================================
  Name        : TP_01.c
- Author      : 
+ Author      : W. Neira
  Version     :
  Copyright   : Your copyright notice
  Description : Hello World in C, Ansi-style
@@ -20,13 +20,13 @@ int main()
 	int	flagKm = 0;
 	int	flagPrecioVuelos = 0;
 	int flagCalculos = 0;
-	float km= 7090;
-	float precioAA = 162965;
+	float km= 0;
+	float precioAA = 0;
 	float precioDebitoAA;
 	float precioCreditoAA;
 	float precioBtcAA;
 	float precioUnitarioAA;
-	float precioLatam = 159339;
+	float precioLatam = 0;
 	float precioDebitoLatam;
 	float precioCreditoLatam;
 	float precioBtcLatam;
@@ -85,7 +85,6 @@ int main()
 				{
 					printf("Error. Antes de realizar los calculos se debe ingresar los Kms y el precios de los vuelos.\n");
 				}
-
 			break;
 			case 4:
 				if(flagCalculos == 1)
@@ -122,7 +121,7 @@ int main()
 		system("pause");
 	  }while(salir != 's');
 
-	printf("Hasta la proxima!");
+	printf("Hasta pronto!");
 	return 0;
 }
 
