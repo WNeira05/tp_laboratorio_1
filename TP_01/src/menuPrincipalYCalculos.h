@@ -14,8 +14,11 @@
 
 /// @brief Muestra las opciones del menu principal
 ///
+///@param km actuales
+///@param precio aerolineas actual
+///@param precio latam actual
 /// @return retorna la opcion del menu elegida
-int menuPrincipal();
+int menuPrincipal(float, float, float);
 
 /// @brief Informa los resultados segun la opcion de pago elegida.
 void informeDeResultados(float, float, float, float, float, float, float, float,
@@ -28,11 +31,6 @@ void informarNoEsNumero();
 ///
 /// @return retorna el valor ingresado por el usuario.
 float ingresoDeKm();
-/// @brief
-///
-/// @param
-/// @return
-float ingresoDePrecio(int);
 
 /// @brief Calcula el valor con el 10% de descuento.
 ///

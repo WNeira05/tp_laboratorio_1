@@ -35,7 +35,7 @@ int main()
 	char salir;
 
 	do{
-		switch(menuPrincipal())
+		switch(menuPrincipal(km, precioAA, precioLatam))
 		{
 			case 1:
 				km = ingresoDeKm();

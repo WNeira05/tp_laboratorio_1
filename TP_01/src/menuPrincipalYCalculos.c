@@ -9,12 +9,13 @@
 #include <math.h>
 #include "menuPrincipalYCalculos.h"
 
-int menuPrincipal() {
+int menuPrincipal(float km, float precioAA, float precioLatam) {
 	int opcion;
 	int cant;
 
-	printf("1- Ingresar kilometros \n");
-	printf("2- Ingresar Precio de Vuelos \n");
+
+	printf("1- Ingresar kilometros (Km= %.2f) \n", km);
+	printf("2- Ingresar Precio de Vuelos: (Aerolineas Argentinas: $%.2f) /// (Latam: $%.2f) \n", precioAA, precioLatam);
 	printf("3- Calcular todos los costos \n");
 	printf("4- Informar Resultados \n");
 	printf("5- Carga forzada de datos \n");
